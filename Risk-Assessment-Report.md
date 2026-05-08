@@ -60,6 +60,24 @@ The following table calculates the Risk Score for each identified threat using t
 
 5. Security Controls & Compliance Mapping
 
+This table maps identified risks to specific security controls and industry-standard frameworks (CIS and NIST CSF), demonstrating a structured approach to risk mitigation.
 
+| Risk | Security Control | Control Type | Framework |
+| :--- | :--- | :--- | :--- |
+| **RDP attacks** | Restrict IP access | Preventive | CIS 4 |
+| **Credential theft** | MFA enforcement | Preventive | NIST PR.AC |
+| **OS exploits** | Patch management | Corrective | CIS 7 |
+| **No detection** | Centralized logging | Detective | NIST DE.CM |
+| **Privilege misuse** | RBAC | Preventive | CIS 5 |
 
-6. 
+6. Recommended Mitigation Actions
+
+* Network Hardening: Use Network Security Groups (NSGs) to limit RDP access, ensuring only authorized IP addresses can connect.
+
+* Identity Protection: Enforce multi-factor authentication (MFA) across all accounts with administrative privileges to prevent unauthorized access.
+
+* Vulnerability Management: Maintain system integrity by consistently installing the latest operating system security patches and software updates.
+
+* Security Monitoring: Leverage Azure Monitor or Microsoft Defender to establish centralized logging and proactive threat alerting.
+
+* Access Governance: Use Role-Based Access Control (RBAC) to manage permissions and enforce the principle of least privilege for all Azure resources.
