@@ -31,5 +31,14 @@ Step 1: Identify Assets “What would hurt if compromised?”
 > ```
 >
 > Output
-> 
+>
+> <img src="images/output.png" alt="powershell output" width="60%">
+>
+> Here we notice that..
+
+> Determine if VM is Accessible From The Internet
+>
+> <img src="images/overview.png" alt="VM overview" width="60%">
+
+
 
