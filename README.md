@@ -19,5 +19,17 @@ Step 1: Identify Assets “What would hurt if compromised?”
 
 > Identify Externally Acessible Services That Increase Attack Surface
 >
+> <img src="images/network.png" alt="Inbound port rules" width="60%">
+>
+> Notice that RDP is open
+
+> Identify Privileged Accounts With Elevated Access to The System.
+>
+> powershell
+> ```powershell
+> Get-LocalUser
+> ```
+>
+> Output
 > 
 
