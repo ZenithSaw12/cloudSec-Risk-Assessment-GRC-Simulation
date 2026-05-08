@@ -13,5 +13,7 @@ GRC Steps
 
 Step 1: Identify Assets “What would hurt if compromised?”
 
-
+> Confirming the operating system
+>
+> <img src="images/resource-group.png" alt="Resource Group Overview" width="60%">
 
