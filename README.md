@@ -117,7 +117,32 @@ This register documents the qualitative risk assessment for the Azure lab enviro
 | **Azure** | Privilege misuse | 2 | 5 | 10 | High Impact |
 | **Logs** | Undetected attack | 3 | 3 | 9 | Delayed Responses |
 
-## Step 3
+## Step 3: Map Controls to Policies & Frameworks
 
+Select a Framework: e.g. NIST CSF, CIS Critical Security Controls, etc.
 
+Control Identification: e.g. preventive, detective, corrective.
 
+# 🛡️ Control Mapping Table
+
+This table maps identified risks to specific security controls and industry-standard frameworks (CIS and NIST CSF), demonstrating a structured approach to risk mitigation.
+
+| Risk | Security Control | Control Type | Framework |
+| :--- | :--- | :--- | :--- |
+| **RDP attacks** | Restrict IP access | Preventive | CIS 4 |
+| **Credential theft** | MFA enforcement | Preventive | NIST PR.AC |
+| **OS exploits** | Patch management | Corrective | CIS 7 |
+| **No detection** | Centralized logging | Detective | NIST DE.CM |
+| **Privilege misuse** | RBAC | Preventive | CIS 5 |
+
+Explanation:
+
+* RDP attacks are mitigated by restricting inbound traffic to trusted IPs (CIS 4; Preventive) to mitigate brute-force attacks.
+
+* Credential theft is addressed through Multi-Factor Authentication (NIST PR.AC; Preventive).
+
+* Operating system exploits are reduced through patch management (CIS 7; Corrective) to remediate vulnerabilities.
+
+* Lack of visibility/detection is mitigated by centralized logging (NIST DE.CM; Detective) to address visibility gaps.
+
+* Privilege misuse is controlled through Role-Based Access Control (CIS 5; Preventive) to enforce least privilege and prevent privilege misuse.
