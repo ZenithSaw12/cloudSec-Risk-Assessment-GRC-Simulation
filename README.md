@@ -1,4 +1,4 @@
-# cloudSec-Risk-Assessment-GRC-Simulation
+# Cloud Security Risk Assessment & GRC Simulation (Azure)
 
 ### Virtual Machine Creation
 
