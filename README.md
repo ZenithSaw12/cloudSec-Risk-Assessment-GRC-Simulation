@@ -68,5 +68,22 @@ Confirm admin account exits and is a member of the Administrators group
 
 Ensuring least priviledge by ensuring to "shadow" accounts
 
+Confirm monitoring is enabled for both Azure and OS-level
+
+> Azure Monitoring
+>
+> <img src="images/monitor.png" alt="monitor screenshot" width="60%">
+> Monitoring is enabled as metrics and basic performance data are visible
+
+> OS-Level Logging
+>
+> <img src="images/logging.png" alt="event viewer screenshot" width="60%">
+> Logs are being generated
+
+
+
+
+
+
 
 
