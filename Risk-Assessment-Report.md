@@ -40,4 +40,26 @@ This table correlates specific technical vulnerabilities with their respective t
 | **Logs** | Undetected attacks | No centralized logging | Severely limits the ability to identify, respond to, and investigate security breaches. |
 | **Azure Subscription** | Misconfiguration | Single admin | Creates a single point of failure and lacks the oversight of administrative accountability. |
 
-4. 
+4. Risk Prioritization
+
+Risks were scored using a standard **Likelihood × Impact** model.
+
+* **Likelihood:** 1 (Low) → 5 (High)
+* **Impact:** 1 (Low) → 5 (High)
+* **Risk Score:** Likelihood × Impact
+
+The following table calculates the Risk Score for each identified threat using the NIST formula: **Likelihood × Impact = Risk Score**.
+
+| Asset | Threat | Likelihood | Impact | Risk Score | Justification |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **RDP** | Brute-force attack | 4 | 4 | 16 | Public exposure |
+| **Admin** | Credential compromise | 3 | 5 | 15 | Full system control |
+| **OS** | Unpatched vulnerabilities | 3 | 4 | 12 | Common Windows attack |
+| **Azure** | Privilege misuse | 2 | 5 | 10 | High-impact resource |
+| **Logs** | Undetected attack | 3 | 3 | 9 | Delayed response |
+
+5. Security Controls & Compliance Mapping
+
+
+
+6. 
