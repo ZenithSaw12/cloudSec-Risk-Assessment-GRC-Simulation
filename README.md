@@ -123,7 +123,7 @@ Select a Framework: e.g. NIST CSF, CIS Critical Security Controls, etc.
 
 Control Identification: e.g. preventive, detective, corrective.
 
-# 🛡️ Control Mapping Table
+# Control Mapping Table
 
 This table maps identified risks to specific security controls and industry-standard frameworks (CIS and NIST CSF), demonstrating a structured approach to risk mitigation.
 
