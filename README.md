@@ -96,7 +96,28 @@ Identified Vulnerabilities & Impact
 | **Identity** | Single admin | No accountability |
 
 
-## Step 2: Assign Risk Scores
+## Step 2: Assign Risk Scores (Quantifying Risk)
+
+Risk Scoring Method
+To quantify the identified risks, the following scoring system was utilized:
+
+* **Likelihood:** 1 (Low) → 5 (High) - How probable it is that the threat will occur?
+* **Impact:** 1 (Low) → 5 (High) - The severity of damage if the threat is realized.
+* **Risk Score:** Likelihood × Impact
+
+Risk Register (Core GRC Artifact)
+
+This register documents the qualitative risk assessment for the Azure lab environment. Risks are calculated using the **NIST SP 800-30** formula: `Likelihood × Impact = Risk Score`.
+
+| Asset | Threat | Likelihood | Impact | Risk Score | Justification |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **RDP** | Brute-force attack | 4 | 4 | 16 | Public Exposure |
+| **Admin** | Credential compromise | 3 | 5 | 15 | Full System Control |
+| **OS** | Unpatched vulnerabilities | 3 | 4 | 12 | Common Windows Attack |
+| **Azure** | Privilege misuse | 2 | 5 | 10 | High Impact |
+| **Logs** | Undetected attack | 3 | 3 | 9 | Delayed Responses |
+
+## Step 3
 
 
 
