@@ -60,7 +60,13 @@ GRC Steps
 >
 > The Network Security Group is attached to the netowrk interface and RDP is allowed in the inbound port rules. This increases the risk of brute-force and credential-based attacks.
 
+OS-Level Confirmation
 
+Confirm admin account exits and is a member of the Administrators group
+
+> <img src="images/azureadmin.png" alt="admin screenshot" width="60%">
+
+Ensuring least priviledge by ensuring to "shadow" accounts
 
 
 
