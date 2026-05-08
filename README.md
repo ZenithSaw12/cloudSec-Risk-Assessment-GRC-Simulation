@@ -73,17 +73,30 @@ Confirm monitoring is enabled for both Azure and OS-level
 > Azure Monitoring
 >
 > <img src="images/monitor.png" alt="monitor screenshot" width="60%">
+>
 > Monitoring is enabled as metrics and basic performance data are visible
 
 > OS-Level Logging
 >
 > <img src="images/logging.png" alt="event viewer screenshot" width="60%">
+>
 > Logs are being generated
 
+We Assume Default OS Configuration Unless Hardened
+
+Identified Vulnerabilities & Impact
+*Technical gaps identified during the initial system audit and their potential business impact.*
+
+| Asset | Vulnerability | Why It Matters |
+| :--- | :--- | :--- |
+| **Virtual Machine (VM)** | RDP exposed to the internet | Increases attack surface |
+| **Authentication** | No MFA | Password compromise risk |
+| **Operating System (OS)** | Default hardening | Common exploit target |
+| **Monitoring** | No SIEM | Attacks may go unnoticed |
+| **Identity** | Single admin | No accountability |
 
 
-
-
+## Step 2: Assign Risk Scores
 
 
 
