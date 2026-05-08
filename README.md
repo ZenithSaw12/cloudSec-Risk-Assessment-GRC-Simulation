@@ -54,5 +54,13 @@ GRC Steps
 | **Azure account** | Unauthorized configuration changes |
 | **Logs** | Undetected malicious activity |
 
+## Step 3: Identify Vulnerabilites "Why the Threat Could Work"
+
+> <img src="images/nsg.png" alt="nsg screenshot" width="60%">
+>
+> The Network Security Group is attached to the netowrk interface and RDP is allowed in the inbound port rules. This increases the risk of brute-force and credential-based attacks.
+
+
+
 
 
