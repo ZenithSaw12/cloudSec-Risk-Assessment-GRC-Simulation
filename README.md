@@ -11,7 +11,7 @@ This VM will act as the entire assessment scope
 
 GRC Steps
 
-Step 1: Identify Assets “What would hurt if compromised?”
+## Step 1: Identify Assets “What would hurt if compromised?”
 
 > Confirming the operating system
 >
@@ -39,6 +39,20 @@ Step 1: Identify Assets “What would hurt if compromised?”
 > Determine if VM is Accessible From The Internet
 >
 > <img src="images/overview.png" alt="VM overview" width="60%">
+>
+> The VM is assigned a public ip. This is considered High Risk as hackers constantly run automated scripts to scan the internet for open RDP ports.
+
+## Step 2: Identify Threats "What Could Go Wrong?"
+
+# Asset-Specific Threat Scenario Matrix
+
+| Asset | Threat Scenario |
+| :--- | :--- |
+| **Public RDP** | Internet brute-force attacks |
+| **Admin account** | Password compromise |
+| **OS** | Exploitation of known vulnerabilities |
+| **Azure account** | Unauthorized configuration changes |
+| **Logs** | Undetected malicious activity |
 
 
 
