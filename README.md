@@ -15,5 +15,9 @@ Step 1: Identify Assets “What would hurt if compromised?”
 
 > Confirming the operating system
 >
-> <img src="images/resource-group.png" alt="Resource Group Overview" width="60%">
+> <img src="images/os.png" alt="Confirm OS" width="60%">
+
+> Identify Externally Acessible Services That Increase Attack Surface
+>
+> 
 
