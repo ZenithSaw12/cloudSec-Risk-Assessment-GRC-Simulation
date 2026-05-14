@@ -1,50 +1,71 @@
 # Cloud Security Risk Assessment & GRC Simulation (Azure)
 
-### Virtual Machine Creation
+## Project Objective
+
+The goal of this project was to simulate a professional Governance, Risk, and Compliance (GRC) workflow by performing a risk assessment on an Azure-hosted virtual machine. By intentionally configuring common security gaps—such as exposed RDP ports and disabled multi-factor authentication—the project demonstrates how to identify assets, quantify risks using the NIST SP 800-30 formula, and map technical vulnerabilities to industry-standard frameworks like CIS and NIST CSF.
+
+## Tools and Technologies
+
+- **Microsoft Azure**: Used for cloud infrastructure, including Virtual Machines (VM), Network Security Groups (NSG), and Resource Groups.
+
+- **PowerShell**: Utilized for OS-level auditing to identify privileged local accounts and system configurations.
+
+- **NIST SP 800-30**: Applied as the primary risk assessment framework to calculate likelihood, impact, and overall risk scores.
+
+- **CIS Critical Security Controls**: Used to map technical security controls to industry-recognized defensive strategies.
+
+- **NIST Cybersecurity Framework (CSF)**: Leveraged to align mitigation strategies with official compliance categories like Protect (PR) and Detect (DE).
+
+
+#### Virtual Machine Creation
 
 Created VM `GRC-WIN-VM01`
 
-During the setup I intentionally set the public inbound port to allow RDP (3389)
-This exposure will be documented as a security risk later
+During the setup I intentionally set the public inbound port to allow RDP (3389). This exposure will be documented as a security risk later.
 
-This VM will act as the entire assessment scope
+This VM will act as the entire assessment scope.
 
-GRC Steps
+## GRC Steps (Identify Assets, Threats, and Vulnerabilities):
 
-## Step 1: Identify Assets “What would hurt if compromised?”
+### Step 1: Identify Assets “What would hurt if compromised?”
 
-> Confirming the operating system
+Confirming the operating system
 >
-> <img src="images/os.png" alt="Confirm OS" width="60%">
+> <img src="images/os.png" alt="Confirm OS" width="90%">
 
-> Identify Externally Acessible Services That Increase Attack Surface
+<br>
+
+Identify Externally Acessible Services That Increase Attack Surface
 >
-> <img src="images/network.png" alt="Inbound port rules" width="60%">
+> <img src="images/network.png" alt="Inbound port rules" width="90%">
 >
 > Notice that RDP is open
 
-> Identify Privileged Accounts With Elevated Access to The System.
->
+<br>
+
+Identify Privileged Accounts With Elevated Access to The System.
+
 > powershell
 > ```powershell
 > Get-LocalUser
 > ```
->
-> Output
->
-> <img src="images/output.png" alt="powershell output" width="60%">
->
-> Here we notice that..
 
-> Determine if VM is Accessible From The Internet
+Output
 >
-> <img src="images/overview.png" alt="VM overview" width="60%">
+> <img src="images/output.png" alt="powershell output" width="90%">
+
+<br>
+
+Determine if VM is Accessible From The Internet
 >
-> The VM is assigned a public ip. This is considered High Risk as hackers constantly run automated scripts to scan the internet for open RDP ports.
+> <img src="images/overview.png" alt="VM overview" width="90%">
+>
 
-## Step 2: Identify Threats "What Could Go Wrong?"
+_The VM is assigned a public IP. This is considered High Risk as hackers constantly run automated scripts to scan the internet for open RDP ports._
 
-# Asset-Specific Threat Scenario Matrix
+### Step 2: Identify Threats "What Could Go Wrong?"
+
+#### Asset-Specific Threat Scenario Matrix
 
 | Asset | Threat Scenario |
 | :--- | :--- |
@@ -54,37 +75,37 @@ GRC Steps
 | **Azure account** | Unauthorized configuration changes |
 | **Logs** | Undetected malicious activity |
 
-## Step 3: Identify Vulnerabilites "Why the Threat Could Work"
+### Step 3: Identify Vulnerabilites "Why the Threat Could Work"
 
 > <img src="images/nsg.png" alt="nsg screenshot" width="60%">
 >
-> The Network Security Group is attached to the netowrk interface and RDP is allowed in the inbound port rules. This increases the risk of brute-force and credential-based attacks.
 
-OS-Level Confirmation
+_The Network Security Group is attached to the network interface and RDP is allowed in the inbound port rules. This increases the risk of brute-force and credential-based attacks._
 
-Confirm admin account exits and is a member of the Administrators group
+##### OS-Level Confirmation: 
+We need to confirm admin account exits and is a member of the Administrators group.
 
 > <img src="images/azureadmin.png" alt="admin screenshot" width="60%">
 
-Ensuring least priviledge by ensuring to "shadow" accounts
-
-Confirm monitoring is enabled for both Azure and OS-level
+##### Confirm monitoring is enabled for both Azure and OS-level:
 
 > Azure Monitoring
 >
-> <img src="images/monitor.png" alt="monitor screenshot" width="60%">
+> <img src="images/monitor.png" alt="monitor screenshot" width="90%">
 >
 > Monitoring is enabled as metrics and basic performance data are visible
 
+<br>
+
 > OS-Level Logging
 >
-> <img src="images/logging.png" alt="event viewer screenshot" width="60%">
+> <img src="images/logging.png" alt="event viewer screenshot" width="90%">
 >
 > Logs are being generated
 
-We Assume Default OS Configuration Unless Hardened
+We Assume Default OS Configuration Unless Hardened.
 
-Identified Vulnerabilities & Impact
+#### Identified Vulnerabilities & Impact
 *Technical gaps identified during the initial system audit and their potential business impact.*
 
 | Asset | Vulnerability | Why It Matters |
@@ -96,7 +117,7 @@ Identified Vulnerabilities & Impact
 | **Identity** | Single admin | No accountability |
 
 
-## Step 2: Assign Risk Scores (Quantifying Risk)
+## Assign Risk Scores (Quantifying Risk)
 
 Risk Scoring Method
 To quantify the identified risks, the following scoring system was utilized:
@@ -117,13 +138,13 @@ This register documents the qualitative risk assessment for the Azure lab enviro
 | **Azure** | Privilege misuse | 2 | 5 | 10 | High Impact |
 | **Logs** | Undetected attack | 3 | 3 | 9 | Delayed Responses |
 
-## Step 3: Map Controls to Policies & Frameworks
+## Map Controls to Policies & Frameworks
 
 Select a Framework: e.g. NIST CSF, CIS Critical Security Controls, etc.
 
 Control Identification: e.g. preventive, detective, corrective.
 
-# Control Mapping Table
+### Control Mapping Table
 
 This table maps identified risks to specific security controls and industry-standard frameworks (CIS and NIST CSF), demonstrating a structured approach to risk mitigation.
 
@@ -146,3 +167,25 @@ Explanation:
 * Lack of visibility/detection is mitigated by centralized logging (NIST DE.CM; Detective) to address visibility gaps.
 
 * Privilege misuse is controlled through Role-Based Access Control (CIS 5; Preventive) to enforce least privilege and prevent privilege misuse.
+
+## GRC Risk Assessment Report
+
+Check out the report `Risk-Assessment-Report.md`
+
+# Lessons Learned
+
+- **Risk Quantification**: Gained experience in translating technical vulnerabilities (like an open port) into business risk scores using standard probability and impact formulas.
+
+- **Framework Alignment**: Learned how to bridge the gap between technical settings and compliance by mapping security controls directly to CIS and NIST standards.
+
+- **Defense-in-Depth**: Understood the necessity of layered security, realizing that a single preventive control (like an NSG) is more effective when paired with detective controls (like logging).
+
+- **Attacker Perspective**: Observed how default cloud configurations and administrative "short-cuts" create significant attack surfaces that are easily exploitable by automated scripts.
+
+- **GRC Documentation**: Developed the ability to communicate technical findings to stakeholders through professional artifacts like a Risk Register and Control Mapping Table.
+
+# Contact & Links
+
+- LinkedIn: www.linkedin.com/in/zenithsaw
+
+- GitHub: https://github.com/ZenithSaw12
